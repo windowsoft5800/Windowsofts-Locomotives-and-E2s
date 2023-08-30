@@ -1,0 +1,69 @@
+@name 2 Axle HTCR Trucks by Windowsoft
+@inputs E1:entity E2:entity
+@outputs 
+@persist Color Material A
+@trigger 
+
+#Use on the Blomberg B/M Model then wire both up#
+
+Color vec(255,255,255) # Color of the Trucks
+
+Material "" # Material of the trucks
+
+
+#ADVANCED USERS BEYOND THIS POINT CAN EDIT HERE
+
+if(first() | dupefinished()){
+
+    A++
+    holoCreate(A)
+    holoModel(A, "models/magtrainslocos/trucks/htcr_1_early_rsg.mdl") #Model
+    holoPos(A, E1:toWorld(vec(0,-50,-6))) #Position
+    holoAng(A, E1:toWorld(ang(0,0,0))) #Angle
+    holoScale(A, vec(1,1,1)) #Scale
+    holoColor(A, vec(Color)) #Color
+    holoParent(A, E1) 
+    holoClipEnabled(A,1,1) #Clip
+    holoClip(A,1,vec(0,44,0),vec(0,1,0),0) #Clip Position/Angle 
+    holoBodygroup(A,1,0) #Bodygroup
+    holoEntity(A):setSubMaterial(1,"models/proppertextures/rubber") #Material  
+
+    A++
+    holoCreate(A)
+    holoModel(A, "models/magtrainslocos/trucks/htcr_1_early_rsg.mdl") #Model
+    holoPos(A, E1:toWorld(vec(0,10,-6))) #Position
+    holoAng(A, E1:toWorld(ang(0,0,0))) #Angle
+    holoScale(A, vec(1,1,1)) #Scale
+    holoColor(A, vec(Color)) #Color
+    holoParent(A, E1) 
+    holoClipEnabled(A,1,1) #Clip
+    holoClip(A,1,vec(0,-9,0),vec(0,-1,0),0) #Clip Position/Angle 
+    holoBodygroup(A,1,0) #Bodygroup
+    holoEntity(A):setSubMaterial(1,"models/proppertextures/rubber") #Material  
+        
+    A++
+    holoCreate(A)
+    holoModel(A, "models/magtrainslocos/trucks/htcr_1_early_rsg.mdl") #Model
+    holoPos(A, E2:toWorld(vec(0,-50,-6))) #Position
+    holoAng(A, E2:toWorld(ang(0,0,0))) #Angle
+    holoScale(A, vec(1,1,1)) #Scale
+    holoColor(A, vec(Color)) #Color
+    holoParent(A, E2) 
+    holoClipEnabled(A,1,1) #Clip
+    holoClip(A,1,vec(0,44,0),vec(0,1,0),0) #Clip Position/Angle 
+    holoBodygroup(A,1,0) #Bodygroup
+    holoEntity(A):setSubMaterial(1,"models/proppertextures/rubber") #Material  
+
+    A++
+    holoCreate(A)
+    holoModel(A, "models/magtrainslocos/trucks/htcr_1_early_rsg.mdl") #Model
+    holoPos(A, E2:toWorld(vec(0,10,-6))) #Position
+    holoAng(A, E2:toWorld(ang(0,0,0))) #Angle
+    holoScale(A, vec(1,1,1)) #Scale
+    holoColor(A, vec(Color)) #Color
+    holoParent(A, E2) 
+    holoClipEnabled(A,1,1) #Clip
+    holoClip(A,1,vec(0,-9,0),vec(0,-1,0),0) #Clip Position/Angle 
+    holoBodygroup(A,1,0) #Bodygroup
+    holoEntity(A):setSubMaterial(1,"models/proppertextures/rubber") #Material  
+}

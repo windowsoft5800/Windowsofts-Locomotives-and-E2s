@@ -1,0 +1,55 @@
+@name 4 Wheel Steerible Truck. [By Windowsoft]
+@inputs E:entity
+@outputs 
+@persist A
+@trigger 
+
+if(first() | dupefinished()){
+
+    A++
+    holoCreate(A)
+    holoModel(A, "models/floofy/trucks/ge_steerable.mdl") #Model
+    holoPos(A, E:toWorld(vec(0,0,0))) #Position
+    holoAng(A, E:toWorld(ang(0,0,0))) #Angle
+    holoScale(A, vec(1,1,1)) #Scale
+    holoColor(A, vec(0,0,0)) #Color
+    holoParent(A, E) 
+    holoClipEnabled(A,1,1) #Clip
+    holoClip(A,1,vec(0,70,0),vec(0,1,0),0) #Clip Position/Angle 
+    holoEntity(A):setSubMaterial(1,"") #Material
+    holoBodygroup(A,1,0) #Bodygroup
+    
+    A++
+    holoCreate(A)
+    holoModel(A, "models/floofy/trucks/ge_steerable.mdl") #Model
+    holoPos(A, E:toWorld(vec(0,0,0))) #Position
+    holoAng(A, E:toWorld(ang(0,0,0))) #Angle
+    holoScale(A, vec(1,1,1)) #Scale
+    holoColor(A, vec(0,0,0)) #Color
+    holoParent(A, E) 
+    holoClipEnabled(A,1,1) #Clip
+    holoClip(A,1,vec(0,70,0),vec(0,-1,0),0) #Clip Position/Angle 
+    holoClipEnabled(A,2,1) #Clip
+    holoClip(A,2,vec(0,-10,0),vec(0,1,0),0) #Clip Position/Angle 
+    holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible") #Material
+    holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible") #Material
+    holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible") #Material
+    holoEntity(A):setSubMaterial(10,"models/proppertextures/invisible") #Material
+    holoEntity(A):setSubMaterial(11,"models/proppertextures/invisible") #Material
+    holoEntity(A):setSubMaterial(12,"models/proppertextures/invisible") #Material
+    holoBodygroup(A,1,0) #Bodygroup
+    
+    A++
+    holoCreate(A)
+    holoModel(A, "models/floofy/trucks/ge_steerable.mdl") #Model
+    holoPos(A, E:toWorld(vec(0,0,0))) #Position
+    holoAng(A, E:toWorld(ang(0,0,0))) #Angle
+    holoScale(A, vec(1,1,1)) #Scale
+    holoColor(A, vec(0,0,0)) #Color
+    holoParent(A, E) 
+    holoClipEnabled(A,1,1) #Clip
+    holoClip(A,1,vec(0,-10,0),vec(0,-1,0),0) #Clip Position/Angle 
+    holoEntity(A):setSubMaterial(1,"") #Material
+    holoBodygroup(A,1,0) #Bodygroup
+    
+}
